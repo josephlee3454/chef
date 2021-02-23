@@ -1,0 +1,36 @@
+﻿@using chefndish.Models
+@model List<Chef>
+
+<div>
+    <h1>Chefs | <a href="dishes">Dishes</a></h1>
+    <br/>
+    <a href="addDish">Add A Chef</a>
+    <br/>
+    <h2>Table of Chefs</h2>
+    <hr>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th># of Dishes</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+        
+            @foreach(Chef item in  @ViewBag.allchefs)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Age</td>
+                    <td>@item.Dishes.Count</td>
+                </tr>
+            }
+                
+    
+        }
+            }
+
+        </tbody>
+    </table>
+</div>
